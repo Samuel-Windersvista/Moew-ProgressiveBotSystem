@@ -14,7 +14,8 @@ export enum BossBots
     FOLLOWERBIGPIPE = "followerbigpipe",
     FOLLOWERBIRDEYE = "followerbirdeye",
     BOSSLEGION = "bosslegion",
-    BOSSPUNISHER = "bosspunisher"
+    BOSSPUNISHER = "bosspunisher",
+    BOSS = "boss"
 }
 
 export enum FollowerBots
@@ -33,7 +34,8 @@ export enum FollowerBots
     FOLLOWERKOLONTAYSECURITY = "followerkolontaysecurity",
     FOLLOWERSANITAR = "followersanitar",
     FOLLOWERTAGILLA = "followertagilla",
-    FOLLOWERZRYACHIY = "followerzryachiy"
+    FOLLOWERZRYACHIY = "followerzryachiy",
+    FOLLOWER = "follower"
 }
 
 export enum SpecialBots

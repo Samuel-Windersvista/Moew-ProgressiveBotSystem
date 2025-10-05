@@ -377,7 +377,7 @@ export class BotConfigs
         {
             if (!this.raidInformation.isBotEnabled(botType)) continue;
 
-            if ((Object.values(PMCBots).includes(botType as PMCBots) || botType == "boss" || botType == "follower") && ModConfig.config.pmcBots.weaponDurability.enable)
+            if (Object.values(PMCBots).includes(botType as PMCBots) && ModConfig.config.pmcBots.weaponDurability.enable)
             {
                 botConfigDurability[botType].weapon.lowestMax = ModConfig.config.pmcBots.weaponDurability.min;
                 botConfigDurability[botType].weapon.highestMax = ModConfig.config.pmcBots.weaponDurability.max;
@@ -1088,7 +1088,7 @@ export class BotConfigs
         this.tierInformation.tiers[4].botMaxLevelVariance = ModConfig.config.customLevelDeltas.tier5.max;
 
         this.tierInformation.tiers[5].botMinLevelVariance = ModConfig.config.customLevelDeltas.tier6.min;
-        this.tierInformation.tiers[5].botMaxLevelVariance = ModConfig.config.customLevelDeltas.tier6.min;
+        this.tierInformation.tiers[5].botMaxLevelVariance = ModConfig.config.customLevelDeltas.tier6.max;
 
         this.tierInformation.tiers[6].botMinLevelVariance = ModConfig.config.customLevelDeltas.tier7.min;
         this.tierInformation.tiers[6].botMaxLevelVariance = ModConfig.config.customLevelDeltas.tier7.max;
