@@ -1,4 +1,14 @@
-export enum BossBots
+export enum AlwaysDisabledBots 
+    {
+    BOSSLEGION = "bosslegion",
+    BOSSPUNISHER = "bosspunisher",
+    BOSSUNTARLEAD = "bossuntarlead",
+    BOSSUNTAROFFICER = "bossuntarofficer",
+    FOLLOWERUNTAR = "followeruntar",
+    FOLLOWERUNTARMARKSMAN = "followeruntarmarksman"
+}
+
+export enum BossBots 
     {
     BOSSBOAR = "bossboar",
     BOSSBULLY = "bossbully",
@@ -18,7 +28,7 @@ export enum BossBots
     BOSS = "boss"
 }
 
-export enum FollowerBots
+export enum FollowerBots 
     {
     BOSSBOARSNIPER = "bossboarsniper",
     FOLLOWERBOAR = "followerboar",
@@ -38,7 +48,7 @@ export enum FollowerBots
     FOLLOWER = "follower"
 }
 
-export enum SpecialBots
+export enum SpecialBots 
     {
     ARENAFIGHTER = "arenafighter",
     ARENAFIGHTEREVENT = "arenafighterevent",
@@ -48,7 +58,7 @@ export enum SpecialBots
     SECTANTWARRIOR = "sectantwarrior"
 }
 
-export enum PMCBots
+export enum PMCBots 
     {
     PMCUSEC = "pmcusec",
     PMCBEAR = "pmcbear",
@@ -57,7 +67,7 @@ export enum PMCBots
     PMC = "pmc"
 }
 
-export enum ScavBots
+export enum ScavBots 
     {
     ASSAULT = "assault",
     ASSAULTGROUP = "assaultgroup",
@@ -67,7 +77,7 @@ export enum ScavBots
     MARKSMAN = "marksman"
 }
 
-export enum EventBots
+export enum EventBots 
     {
     GIFTER = "gifter",
     INFECTEDASSAULT = "infectedassault",
