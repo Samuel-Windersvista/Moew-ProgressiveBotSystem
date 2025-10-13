@@ -1,5 +1,5 @@
 import { injectable } from "tsyringe";
-import { BossBots, FollowerBots, PMCBots, ScavBots, SpecialBots, EventBots } from "../Enums/Bots";
+import { BossBots, FollowerBots, PMCBots, ScavBots, SpecialBots, EventBots, AlwaysDisabledBots } from "../Enums/Bots";
 import { ModConfig } from "../Globals/ModConfig";
 
 @injectable()
@@ -26,8 +26,9 @@ export class BotEnablementHelper
     
     public botDisabled(botType: string): boolean
     {
-        // Special handling for punisher & legion
-        if (botType.toLowerCase() == "bosspunisher" || botType.toLowerCase() == "bosslegion") return true;
+        botType = botType.toLowerCase();
+        // Special Handling for Modded Bot Types
+        if (this.isModdedBot(botType)) return true;
 
         // Normal bot types
         if (this.isPMC(botType)) return !ModConfig.config.pmcBots.enable;
@@ -67,5 +68,10 @@ export class BotEnablementHelper
     private isSpecial(botType: string): boolean
     {
         return Object.values(SpecialBots).includes(botType as SpecialBots);
+    }
+
+    private isModdedBot(botType: string): boolean
+    {
+        return Object.values(AlwaysDisabledBots).includes(botType as AlwaysDisabledBots);
     }
 }
