@@ -1002,13 +1002,22 @@ export class ModdedImportHelper
         // Check if the itemID's slot doesn't already contain the item to import, if it doesn't - add it
         if (!this.tierInformation.tier4mods[weaponID][slotName].includes(slotItem))
         {
-            if (!highTierItem || lowTierItem) this.tierInformation.tier1mods[weaponID][slotName].push(slotItem);
-            if (!highTierItem || lowTierItem) this.tierInformation.tier2mods[weaponID][slotName].push(slotItem);
-            if (!highTierItem || lowTierItem) this.tierInformation.tier3mods[weaponID][slotName].push(slotItem);
-            if (!lowTierItem || highTierItem) this.tierInformation.tier4mods[weaponID][slotName].push(slotItem);
-            if (!lowTierItem || highTierItem) this.tierInformation.tier5mods[weaponID][slotName].push(slotItem);
-            if (!lowTierItem || highTierItem) this.tierInformation.tier6mods[weaponID][slotName].push(slotItem);
-            if (!lowTierItem || highTierItem) this.tierInformation.tier7mods[weaponID][slotName].push(slotItem);
+            try 
+            {
+                if (!highTierItem || lowTierItem) this.tierInformation.tier1mods[weaponID][slotName].push(slotItem);
+                if (!highTierItem || lowTierItem) this.tierInformation.tier2mods[weaponID][slotName].push(slotItem);
+                if (!highTierItem || lowTierItem) this.tierInformation.tier3mods[weaponID][slotName].push(slotItem);
+                if (!lowTierItem || highTierItem) this.tierInformation.tier4mods[weaponID][slotName].push(slotItem);
+                if (!lowTierItem || highTierItem) this.tierInformation.tier5mods[weaponID][slotName].push(slotItem);
+                if (!lowTierItem || highTierItem) this.tierInformation.tier6mods[weaponID][slotName].push(slotItem);
+                if (!lowTierItem || highTierItem) this.tierInformation.tier7mods[weaponID][slotName].push(slotItem);
+            } 
+            catch (ex) 
+            {
+                this.apbsLogger.log(Logging.WARN, `Adding attachment failed for AttachmentID: ${slotItem} | WeaponID: ${weaponID} | Slot: ${slotName}`)
+                this.apbsLogger.log(Logging.WARN, `There is no guarantee your bots will load while this error is present. Report it to acidphantasm or move the mod the attachmentID belongs to, to load after APBS.`)
+                return;
+            }
 
             // Push any children mods
             this.recursivePushChildrenMods(slotItem, true);
