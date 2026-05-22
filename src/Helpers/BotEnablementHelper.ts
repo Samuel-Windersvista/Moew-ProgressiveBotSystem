@@ -5,6 +5,13 @@ import { ModConfig } from "../Globals/ModConfig";
 @injectable()
 export class BotEnablementHelper
 {
+    public static readonly PMC_SET: ReadonlySet<string> = new Set(Object.values(PMCBots));
+    public static readonly SCAV_SET: ReadonlySet<string> = new Set(Object.values(ScavBots));
+    public static readonly BOSS_SET: ReadonlySet<string> = new Set(Object.values(BossBots));
+    public static readonly FOLLOWER_SET: ReadonlySet<string> = new Set(Object.values(FollowerBots));
+    public static readonly SPECIAL_SET: ReadonlySet<string> = new Set(Object.values(SpecialBots));
+    public static readonly EVENT_SET: ReadonlySet<string> = new Set(Object.values(EventBots));
+
     constructor()
     {}
 
@@ -42,32 +49,32 @@ export class BotEnablementHelper
 
     private isBoss(botType: string): boolean
     {
-        return Object.values(BossBots).includes(botType as BossBots);
+        return BotEnablementHelper.BOSS_SET.has(botType);
     }
 
     private isFollower(botType: string): boolean
     {        
-        return Object.values(FollowerBots).includes(botType as FollowerBots);
+        return BotEnablementHelper.FOLLOWER_SET.has(botType);
     }
 
     private isPMC(botType: string): boolean
     {
-        return Object.values(PMCBots).includes(botType as PMCBots);
+        return BotEnablementHelper.PMC_SET.has(botType);
     }
 
     private isScav(botType: string): boolean
     {
-        return Object.values(ScavBots).includes(botType as ScavBots);
+        return BotEnablementHelper.SCAV_SET.has(botType);
     }
 
     private isEvent(botType: string): boolean
     {
-        return Object.values(EventBots).includes(botType as EventBots);
+        return BotEnablementHelper.EVENT_SET.has(botType);
     }
 
     private isSpecial(botType: string): boolean
     {
-        return Object.values(SpecialBots).includes(botType as SpecialBots);
+        return BotEnablementHelper.SPECIAL_SET.has(botType);
     }
 
     private isModdedBot(botType: string): boolean

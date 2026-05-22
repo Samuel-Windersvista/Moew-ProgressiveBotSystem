@@ -16,6 +16,7 @@ import { ModConfig } from "../Globals/ModConfig";
 import { APBSLogger } from "../Utils/APBSLogger";
 import { Logging } from "../Enums/Logging";
 import { BossBots, EventBots, FollowerBots, PMCBots, ScavBots, SpecialBots } from "../Enums/Bots";
+import { BotEnablementHelper } from "../Helpers/BotEnablementHelper";
 
 
 @injectable()
@@ -187,8 +188,8 @@ export class BotConfigs
         for (const botType in botConfigEquipment)
         {
             if (!this.raidInformation.isBotEnabled(botType)) continue;
-            if (Object.values(EventBots).includes(botType as EventBots)) continue;
-            if (Object.values(ScavBots).includes(botType as ScavBots))
+            if (BotEnablementHelper.EVENT_SET.has(botType as EventBots)) continue;
+            if (BotEnablementHelper.SCAV_SET.has(botType as ScavBots))
             {
                 botConfigEquipment[botType].filterPlatesByLevel = true;
                 botConfigEquipment[botType].armorPlateWeighting = [
@@ -244,7 +245,7 @@ export class BotConfigs
                 ];
                 continue;
             }
-            if (Object.values(PMCBots).includes(botType as PMCBots))
+            if (BotEnablementHelper.PMC_SET.has(botType as PMCBots))
             {
                 botConfigEquipment[botType].filterPlatesByLevel = true;
                 botConfigEquipment[botType].armorPlateWeighting = [
@@ -377,7 +378,7 @@ export class BotConfigs
         {
             if (!this.raidInformation.isBotEnabled(botType)) continue;
 
-            if (Object.values(PMCBots).includes(botType as PMCBots) && ModConfig.config.pmcBots.weaponDurability.enable)
+            if (BotEnablementHelper.PMC_SET.has(botType as PMCBots) && ModConfig.config.pmcBots.weaponDurability.enable)
             {
                 botConfigDurability[botType].weapon.lowestMax = ModConfig.config.pmcBots.weaponDurability.min;
                 botConfigDurability[botType].weapon.highestMax = ModConfig.config.pmcBots.weaponDurability.max;
@@ -385,7 +386,7 @@ export class BotConfigs
                 botConfigDurability[botType].weapon.maxDelta = ModConfig.config.pmcBots.weaponDurability.maxDelta;
                 botConfigDurability[botType].weapon.minLimitPercent = ModConfig.config.pmcBots.weaponDurability.minLimitPercent;
             }
-            if (Object.values(ScavBots).includes(botType as ScavBots) && ModConfig.config.scavBots.weaponDurability.enable)
+            if (BotEnablementHelper.SCAV_SET.has(botType as ScavBots) && ModConfig.config.scavBots.weaponDurability.enable)
             {
                 botConfigDurability[botType].weapon.lowestMax = ModConfig.config.scavBots.weaponDurability.min;
                 botConfigDurability[botType].weapon.highestMax = ModConfig.config.scavBots.weaponDurability.max;
@@ -393,7 +394,7 @@ export class BotConfigs
                 botConfigDurability[botType].weapon.maxDelta = ModConfig.config.scavBots.weaponDurability.maxDelta;
                 botConfigDurability[botType].weapon.minLimitPercent = ModConfig.config.scavBots.weaponDurability.minLimitPercent;
             }
-            if (Object.values(BossBots).includes(botType as BossBots) && ModConfig.config.bossBots.weaponDurability.enable)
+            if (BotEnablementHelper.BOSS_SET.has(botType as BossBots) && ModConfig.config.bossBots.weaponDurability.enable)
             {
                 botConfigDurability[botType].weapon.lowestMax = ModConfig.config.bossBots.weaponDurability.min;
                 botConfigDurability[botType].weapon.highestMax = ModConfig.config.bossBots.weaponDurability.max;
@@ -401,7 +402,7 @@ export class BotConfigs
                 botConfigDurability[botType].weapon.maxDelta = ModConfig.config.bossBots.weaponDurability.maxDelta;
                 botConfigDurability[botType].weapon.minLimitPercent = ModConfig.config.bossBots.weaponDurability.minLimitPercent;
             }
-            if (Object.values(FollowerBots).includes(botType as FollowerBots) && ModConfig.config.followerBots.weaponDurability.enable)
+            if (BotEnablementHelper.FOLLOWER_SET.has(botType as FollowerBots) && ModConfig.config.followerBots.weaponDurability.enable)
             {
                 botConfigDurability[botType].weapon.lowestMax = ModConfig.config.followerBots.weaponDurability.min;
                 botConfigDurability[botType].weapon.highestMax = ModConfig.config.followerBots.weaponDurability.max;
@@ -409,7 +410,7 @@ export class BotConfigs
                 botConfigDurability[botType].weapon.maxDelta = ModConfig.config.followerBots.weaponDurability.maxDelta;
                 botConfigDurability[botType].weapon.minLimitPercent = ModConfig.config.followerBots.weaponDurability.minLimitPercent;
             }
-            if (Object.values(SpecialBots).includes(botType as SpecialBots) && ModConfig.config.specialBots.weaponDurability.enable)
+            if (BotEnablementHelper.SPECIAL_SET.has(botType as SpecialBots) && ModConfig.config.specialBots.weaponDurability.enable)
             {
                 botConfigDurability[botType].weapon.lowestMax = ModConfig.config.specialBots.weaponDurability.min;
                 botConfigDurability[botType].weapon.highestMax = ModConfig.config.specialBots.weaponDurability.max;
@@ -578,7 +579,7 @@ export class BotConfigs
             let foodResourcePercent = 60;
             let medResourcePercent = 60;
 
-            if (Object.values(PMCBots).includes(botType as PMCBots) && ModConfig.config.pmcBots.resourceRandomization.enable)
+            if (BotEnablementHelper.PMC_SET.has(botType as PMCBots) && ModConfig.config.pmcBots.resourceRandomization.enable)
             {
                 setValues = true;
                 foodMaxChance = ModConfig.config.pmcBots.resourceRandomization.foodRateMaxChance;
@@ -586,7 +587,7 @@ export class BotConfigs
                 medMaxChance = ModConfig.config.pmcBots.resourceRandomization.medRateMaxChance;
                 medResourcePercent = ModConfig.config.pmcBots.resourceRandomization.medRateUsagePercent;
             }
-            if (Object.values(ScavBots).includes(botType as ScavBots) && ModConfig.config.scavBots.resourceRandomization.enable)
+            if (BotEnablementHelper.SCAV_SET.has(botType as ScavBots) && ModConfig.config.scavBots.resourceRandomization.enable)
             {
                 setValues = true;
                 foodMaxChance = ModConfig.config.scavBots.resourceRandomization.foodRateMaxChance;
@@ -594,7 +595,7 @@ export class BotConfigs
                 medMaxChance = ModConfig.config.scavBots.resourceRandomization.medRateMaxChance;
                 medResourcePercent = ModConfig.config.scavBots.resourceRandomization.medRateUsagePercent;
             }
-            if (Object.values(BossBots).includes(botType as BossBots) && ModConfig.config.bossBots.resourceRandomization.enable)
+            if (BotEnablementHelper.BOSS_SET.has(botType as BossBots) && ModConfig.config.bossBots.resourceRandomization.enable)
             {
                 setValues = true;
                 foodMaxChance = ModConfig.config.bossBots.resourceRandomization.foodRateMaxChance;
@@ -602,7 +603,7 @@ export class BotConfigs
                 medMaxChance = ModConfig.config.bossBots.resourceRandomization.medRateMaxChance;
                 medResourcePercent = ModConfig.config.bossBots.resourceRandomization.medRateUsagePercent;
             }
-            if (Object.values(FollowerBots).includes(botType as FollowerBots) && ModConfig.config.followerBots.resourceRandomization.enable)
+            if (BotEnablementHelper.FOLLOWER_SET.has(botType as FollowerBots) && ModConfig.config.followerBots.resourceRandomization.enable)
             {
                 setValues = true;
                 foodMaxChance = ModConfig.config.followerBots.resourceRandomization.foodRateMaxChance;
@@ -610,7 +611,7 @@ export class BotConfigs
                 medMaxChance = ModConfig.config.followerBots.resourceRandomization.medRateMaxChance;
                 medResourcePercent = ModConfig.config.followerBots.resourceRandomization.medRateUsagePercent;
             }
-            if (Object.values(SpecialBots).includes(botType as SpecialBots) && ModConfig.config.specialBots.resourceRandomization.enable)
+            if (BotEnablementHelper.SPECIAL_SET.has(botType as SpecialBots) && ModConfig.config.specialBots.resourceRandomization.enable)
             {
                 setValues = true;
                 foodMaxChance = ModConfig.config.specialBots.resourceRandomization.foodRateMaxChance;
@@ -793,7 +794,7 @@ export class BotConfigs
         if (!ModConfig.config.scavBots.enable) return;
         if (!ModConfig.config.scavBots.lootConfig.enable)
         {
-            Object.values(ScavBots).forEach((bot) => 
+            BotEnablementHelper.SCAV_SET.forEach((bot) => 
             {
                 this.botConfig.disableLootOnBotTypes.push(bot);
             })
@@ -806,7 +807,7 @@ export class BotConfigs
         {
             for (const botType in botTable)
             {
-                if (Object.values(ScavBots).includes(botType as ScavBots))
+                if (BotEnablementHelper.SCAV_SET.has(botType as ScavBots))
                 {
                     for (const item of ModConfig.config.scavBots.lootConfig.blacklist)
                     {
@@ -848,7 +849,7 @@ export class BotConfigs
         if (!ModConfig.config.bossBots.enable) return;
         if (!ModConfig.config.bossBots.lootConfig.enable)
         {
-            Object.values(BossBots).forEach((bot) => 
+            BotEnablementHelper.BOSS_SET.forEach((bot) => 
             {
                 this.botConfig.disableLootOnBotTypes.push(bot);
             })
@@ -861,7 +862,7 @@ export class BotConfigs
         {
             for (const botType in botTable)
             {
-                if (Object.values(BossBots).includes(botType as BossBots))
+                if (BotEnablementHelper.BOSS_SET.has(botType as BossBots))
                 {
                     for (const item of ModConfig.config.bossBots.lootConfig.blacklist)
                     {
@@ -903,7 +904,7 @@ export class BotConfigs
         if (!ModConfig.config.followerBots.enable) return;
         if (!ModConfig.config.followerBots.lootConfig.enable)
         {
-            Object.values(FollowerBots).forEach((bot) => 
+            BotEnablementHelper.FOLLOWER_SET.forEach((bot) => 
             {
                 this.botConfig.disableLootOnBotTypes.push(bot);
             })
@@ -916,7 +917,7 @@ export class BotConfigs
         {
             for (const botType in botTable)
             {
-                if (Object.values(FollowerBots).includes(botType as FollowerBots))
+                if (BotEnablementHelper.FOLLOWER_SET.has(botType as FollowerBots))
                 {
                     for (const item of ModConfig.config.followerBots.lootConfig.blacklist)
                     {
@@ -958,7 +959,7 @@ export class BotConfigs
         if (!ModConfig.config.specialBots.enable) return;
         if (!ModConfig.config.specialBots.lootConfig.enable)
         {
-            Object.values(SpecialBots).forEach((bot) => 
+            BotEnablementHelper.SPECIAL_SET.forEach((bot) => 
             {
                 this.botConfig.disableLootOnBotTypes.push(bot);
             })
@@ -971,7 +972,7 @@ export class BotConfigs
         {
             for (const botType in botTable)
             {
-                if (Object.values(SpecialBots).includes(botType as SpecialBots))
+                if (BotEnablementHelper.SPECIAL_SET.has(botType as SpecialBots))
                 {
                     for (const item of ModConfig.config.specialBots.lootConfig.blacklist)
                     {

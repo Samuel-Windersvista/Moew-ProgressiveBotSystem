@@ -39,6 +39,7 @@ import { APBSIQuestBotGenerationDetails } from "../Interface/APBSIQuestBotGear";
 import { EquipmentSlots } from "@spt/models/enums/EquipmentSlots";
 import { BossBots, FollowerBots, PMCBots, ScavBots, SpecialBots } from "../Enums/Bots";
 import { BaseClasses } from "@spt/models/enums/BaseClasses";
+import { BotEnablementHelper } from "../Helpers/BotEnablementHelper";
 
 /** Handle profile related client events */
 @injectable()
@@ -276,23 +277,23 @@ export class APBSBotWeaponGenerator extends BotWeaponGenerator
         let weaponEnhancementChance = 0;
         if (this.raidInformation.isBotEnabled(botRole))
         {
-            if (Object.values(PMCBots).includes(botRole as PMCBots))
+            if (BotEnablementHelper.PMC_SET.has(botRole as PMCBots))
             {
                 weaponEnhancementChance = ModConfig.config.pmcBots.weaponDurability.enhancementChance;
             }
-            if (Object.values(ScavBots).includes(botRole as ScavBots))
+            if (BotEnablementHelper.SCAV_SET.has(botRole as ScavBots))
             {
                 weaponEnhancementChance = ModConfig.config.scavBots.weaponDurability.enhancementChance;
             }
-            if (Object.values(BossBots).includes(botRole as BossBots))
+            if (BotEnablementHelper.BOSS_SET.has(botRole as BossBots))
             {
                 weaponEnhancementChance = ModConfig.config.bossBots.weaponDurability.enhancementChance;
             }
-            if (Object.values(FollowerBots).includes(botRole as FollowerBots))
+            if (BotEnablementHelper.FOLLOWER_SET.has(botRole as FollowerBots))
             {
                 weaponEnhancementChance = ModConfig.config.followerBots.weaponDurability.enhancementChance;
             }
-            if (Object.values(SpecialBots).includes(botRole as SpecialBots))
+            if (BotEnablementHelper.SPECIAL_SET.has(botRole as SpecialBots))
             {
                 weaponEnhancementChance = ModConfig.config.specialBots.weaponDurability.enhancementChance;
             }
@@ -597,11 +598,11 @@ export class APBSBotWeaponGenerator extends BotWeaponGenerator
 
     private getRerollConfig(botRole: string): EnableChance
     {
-        if (Object.values(PMCBots).includes(botRole as PMCBots)) return ModConfig.config.pmcBots.rerollConfig;
-        if (Object.values(ScavBots).includes(botRole as ScavBots)) return ModConfig.config.scavBots.rerollConfig;
-        if (Object.values(BossBots).includes(botRole as BossBots)) return ModConfig.config.bossBots.rerollConfig;
-        if (Object.values(FollowerBots).includes(botRole as FollowerBots)) return ModConfig.config.followerBots.rerollConfig;
-        if (Object.values(SpecialBots).includes(botRole as SpecialBots)) return ModConfig.config.specialBots.rerollConfig;
+        if (BotEnablementHelper.PMC_SET.has(botRole as PMCBots)) return ModConfig.config.pmcBots.rerollConfig;
+        if (BotEnablementHelper.SCAV_SET.has(botRole as ScavBots)) return ModConfig.config.scavBots.rerollConfig;
+        if (BotEnablementHelper.BOSS_SET.has(botRole as BossBots)) return ModConfig.config.bossBots.rerollConfig;
+        if (BotEnablementHelper.FOLLOWER_SET.has(botRole as FollowerBots)) return ModConfig.config.followerBots.rerollConfig;
+        if (BotEnablementHelper.SPECIAL_SET.has(botRole as SpecialBots)) return ModConfig.config.specialBots.rerollConfig;
 
         return {
             enable: false,
@@ -611,11 +612,11 @@ export class APBSBotWeaponGenerator extends BotWeaponGenerator
 
     private getToploadConfig(botRole: string): ToploadConfig
     {
-        if (Object.values(PMCBots).includes(botRole as PMCBots)) return ModConfig.config.pmcBots.toploadConfig;
-        if (Object.values(ScavBots).includes(botRole as ScavBots)) return ModConfig.config.scavBots.toploadConfig;
-        if (Object.values(BossBots).includes(botRole as BossBots)) return ModConfig.config.bossBots.toploadConfig;
-        if (Object.values(FollowerBots).includes(botRole as FollowerBots)) return ModConfig.config.followerBots.toploadConfig;
-        if (Object.values(SpecialBots).includes(botRole as SpecialBots)) return ModConfig.config.specialBots.toploadConfig;
+        if (BotEnablementHelper.PMC_SET.has(botRole as PMCBots)) return ModConfig.config.pmcBots.toploadConfig;
+        if (BotEnablementHelper.SCAV_SET.has(botRole as ScavBots)) return ModConfig.config.scavBots.toploadConfig;
+        if (BotEnablementHelper.BOSS_SET.has(botRole as BossBots)) return ModConfig.config.bossBots.toploadConfig;
+        if (BotEnablementHelper.FOLLOWER_SET.has(botRole as FollowerBots)) return ModConfig.config.followerBots.toploadConfig;
+        if (BotEnablementHelper.SPECIAL_SET.has(botRole as SpecialBots)) return ModConfig.config.specialBots.toploadConfig;
 
         return {
             enable: false,
