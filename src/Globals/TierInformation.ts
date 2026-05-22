@@ -104,7 +104,7 @@ export class TierInformation
         {
             tier: 7,
             playerMinimumLevel: 61,
-            playerMaximumLevel: 100,
+            playerMaximumLevel: 79,
             botMinLevelVariance: 79,
             botMaxLevelVariance: 20,
             scavMinLevelVariance: 79,
