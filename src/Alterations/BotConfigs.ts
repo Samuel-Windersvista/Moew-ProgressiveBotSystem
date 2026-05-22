@@ -811,33 +811,12 @@ export class BotConfigs
                 {
                     for (const item of ModConfig.config.scavBots.lootConfig.blacklist)
                     {
-                        if (Object.keys(botTable[botType].inventory.items.TacticalVest).includes(item))
-                        {
-                            const tacticalVestLootTable = Object.keys(botTable[botType].inventory.items.TacticalVest);
-                            const index = tacticalVestLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                tacticalVestLootTable.splice(index, 1)
-                            }
-                        }
-                        if (Object.keys(botTable[botType].inventory.items.Pockets).includes(item))
-                        {
-                            const pocketsLootTable = Object.keys(botTable[botType].inventory.items.Pockets);
-                            const index = pocketsLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                pocketsLootTable.splice(index, 1)
-                            }
-                        }
-                        if (Object.keys(botTable[botType].inventory.items.Backpack).includes(item))
-                        {
-                            const backpackLootTable = Object.keys(botTable[botType].inventory.items.Backpack);
-                            const index = backpackLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                backpackLootTable.splice(index, 1)
-                            }
-                        }
+                        const vestItems = botTable[botType].inventory.items.TacticalVest;
+                        const pocketItems = botTable[botType].inventory.items.Pockets;
+                        const backpackItems = botTable[botType].inventory.items.Backpack;
+                        if (vestItems && item in vestItems) delete vestItems[item];
+                        if (pocketItems && item in pocketItems) delete pocketItems[item];
+                        if (backpackItems && item in backpackItems) delete backpackItems[item];
                     }
                 }
             }
@@ -866,39 +845,18 @@ export class BotConfigs
                 {
                     for (const item of ModConfig.config.bossBots.lootConfig.blacklist)
                     {
-                        if (Object.keys(botTable[botType].inventory.items.TacticalVest).includes(item))
-                        {
-                            const tacticalVestLootTable = Object.keys(botTable[botType].inventory.items.TacticalVest);
-                            const index = tacticalVestLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                tacticalVestLootTable.splice(index, 1)
-                            }
-                        }
-                        if (Object.keys(botTable[botType].inventory.items.Pockets).includes(item))
-                        {
-                            const pocketsLootTable = Object.keys(botTable[botType].inventory.items.Pockets);
-                            const index = pocketsLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                pocketsLootTable.splice(index, 1)
-                            }
-                        }
-                        if (Object.keys(botTable[botType].inventory.items.Backpack).includes(item))
-                        {
-                            const backpackLootTable = Object.keys(botTable[botType].inventory.items.Backpack);
-                            const index = backpackLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                backpackLootTable.splice(index, 1)
-                            }
-                        }
+                        const vestItems = botTable[botType].inventory.items.TacticalVest;
+                        const pocketItems = botTable[botType].inventory.items.Pockets;
+                        const backpackItems = botTable[botType].inventory.items.Backpack;
+                        if (vestItems && item in vestItems) delete vestItems[item];
+                        if (pocketItems && item in pocketItems) delete pocketItems[item];
+                        if (backpackItems && item in backpackItems) delete backpackItems[item];
                     }
                 }
             }
         }
     }
-
+    
     private setFollowerLoot(): void
     {
         if (!ModConfig.config.followerBots.enable) return;
@@ -921,33 +879,12 @@ export class BotConfigs
                 {
                     for (const item of ModConfig.config.followerBots.lootConfig.blacklist)
                     {
-                        if (Object.keys(botTable[botType].inventory.items.TacticalVest).includes(item))
-                        {
-                            const tacticalVestLootTable = Object.keys(botTable[botType].inventory.items.TacticalVest);
-                            const index = tacticalVestLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                tacticalVestLootTable.splice(index, 1)
-                            }
-                        }
-                        if (Object.keys(botTable[botType].inventory.items.Pockets).includes(item))
-                        {
-                            const pocketsLootTable = Object.keys(botTable[botType].inventory.items.Pockets);
-                            const index = pocketsLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                pocketsLootTable.splice(index, 1)
-                            }
-                        }
-                        if (Object.keys(botTable[botType].inventory.items.Backpack).includes(item))
-                        {
-                            const backpackLootTable = Object.keys(botTable[botType].inventory.items.Backpack);
-                            const index = backpackLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                backpackLootTable.splice(index, 1)
-                            }
-                        }
+                        const vestItems = botTable[botType].inventory.items.TacticalVest;
+                        const pocketItems = botTable[botType].inventory.items.Pockets;
+                        const backpackItems = botTable[botType].inventory.items.Backpack;
+                        if (vestItems && item in vestItems) delete vestItems[item];
+                        if (pocketItems && item in pocketItems) delete pocketItems[item];
+                        if (backpackItems && item in backpackItems) delete backpackItems[item];
                     }
                 }
             }
@@ -976,33 +913,12 @@ export class BotConfigs
                 {
                     for (const item of ModConfig.config.specialBots.lootConfig.blacklist)
                     {
-                        if (Object.keys(botTable[botType].inventory.items.TacticalVest).includes(item))
-                        {
-                            const tacticalVestLootTable = Object.keys(botTable[botType].inventory.items.TacticalVest);
-                            const index = tacticalVestLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                tacticalVestLootTable.splice(index, 1)
-                            }
-                        }
-                        if (Object.keys(botTable[botType].inventory.items.Pockets).includes(item))
-                        {
-                            const pocketsLootTable = Object.keys(botTable[botType].inventory.items.Pockets);
-                            const index = pocketsLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                pocketsLootTable.splice(index, 1)
-                            }
-                        }
-                        if (Object.keys(botTable[botType].inventory.items.Backpack).includes(item))
-                        {
-                            const backpackLootTable = Object.keys(botTable[botType].inventory.items.Backpack);
-                            const index = backpackLootTable.indexOf(item);
-                            if (index > -1)
-                            {
-                                backpackLootTable.splice(index, 1)
-                            }
-                        }
+                        const vestItems = botTable[botType].inventory.items.TacticalVest;
+                        const pocketItems = botTable[botType].inventory.items.Pockets;
+                        const backpackItems = botTable[botType].inventory.items.Backpack;
+                        if (vestItems && item in vestItems) delete vestItems[item];
+                        if (pocketItems && item in pocketItems) delete pocketItems[item];
+                        if (backpackItems && item in backpackItems) delete backpackItems[item];
                     }
                 }
             }
