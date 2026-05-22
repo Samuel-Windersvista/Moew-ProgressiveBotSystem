@@ -1,6 +1,3 @@
-import * as fs from "fs";
-import * as path from "path";
-
 // SPT
 import { DependencyContainer, Lifecycle } from "tsyringe";
 import { PreSptModLoader } from "@spt/loaders/PreSptModLoader";
@@ -235,8 +232,6 @@ export class InstanceManager
         // Resolve this last to set mod configs
         this.container.register<ModConfig>("ModConfig", ModConfig, { lifecycle: Lifecycle.Singleton })
         this.modConfig = container.resolve<ModConfig>("ModConfig");
-
-        this.getPath();
     }
 
     public postDBLoad(container: DependencyContainer): void
@@ -259,22 +254,5 @@ export class InstanceManager
         // Custom Classes
         this.blacklistHelper = new BlacklistHelper(this.database, this.apbsEquipmentGetter, this.apbsLogger);
 
-    }
-
-    public getPath(): boolean
-    {
-        const dirPath: string = path.dirname(__filename);
-        const modDir: string = path.join(dirPath, "..", "..");
-        
-        const key = "V2F5ZmFyZXI=";
-        const keyDE = Buffer.from(key, "base64")
-
-        const contents = fs.readdirSync(modDir).includes(keyDE.toString());
-
-        if (contents)
-        {
-            return true;
-        }
-        return false;   
     }
 }
