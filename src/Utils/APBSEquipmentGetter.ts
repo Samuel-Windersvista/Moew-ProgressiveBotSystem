@@ -461,7 +461,7 @@ export class APBSEquipmentGetter
     {
         if (minTier == maxTier) return minTier;
         
-        const newTier = (Math.floor(Math.random() * (maxTier - minTier + 1) + minTier)) >= tierInfo  ? (tierInfo - 1) : (Math.floor(Math.random() * (maxTier - minTier + 1) + minTier))
+        const newTier = (Math.floor(Math.random() * (maxTier - minTier + 1) + minTier)) > tierInfo  ? (tierInfo - 1) : (Math.floor(Math.random() * (maxTier - minTier + 1) + minTier))
         return newTier;
     }
 }
