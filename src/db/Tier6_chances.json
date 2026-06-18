@@ -4,7 +4,7 @@
             "equipment": {
                 "ArmBand": 75,
                 "ArmorVest": 75,
-                "Backpack": 99,
+                "Backpack": 95,
                 "Earpiece": 100,
                 "Eyewear": 25,
                 "FaceCover": 80,
@@ -12,7 +12,7 @@
                 "Headwear": 100,
                 "Holster": 50,
                 "Scabbard": 100,
-                "SecondPrimaryWeapon": 15,
+                "SecondPrimaryWeapon": 25,
                 "TacticalVest": 99,
                 "SecuredContainer": 100,
                 "Pockets": 100
@@ -25,7 +25,7 @@
                 "mod_equipment_000": 75,
                 "mod_equipment_001": 45,
                 "mod_equipment_002": 45,
-                "mod_nvg": 100,
+                "mod_nvg": 95,
                 "right_side_plate": 95
             },
             "weaponMods": {
@@ -35,7 +35,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -87,7 +87,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -139,7 +139,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -191,7 +191,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -243,7 +243,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 50,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 75,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -295,7 +295,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 75,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -347,7 +347,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 75,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -399,7 +399,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -451,7 +451,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -503,7 +503,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -612,11 +612,11 @@
                     },
                     "grenades": {
                         "weights": {
-                            "0": 30,
+                            "0": 10,
                             "1": 30,
-                            "2": 25,
-                            "3": 10,
-                            "4": 5
+                            "2": 30,
+                            "3": 20,
+                            "4": 10
                         },
                         "whitelist": {
                             "5710c24ad2720bc3458b45a3": 5,
@@ -670,9 +670,9 @@
                     },
                     "stims": {
                         "weights": {
-                            "0": 50,
+                            "0": 10,
                             "1": 40,
-                            "2": 10
+                            "2": 50
                         },
                         "whitelist": {
                             "66507eabf5ddb0818b085b68": 1,
@@ -714,7 +714,7 @@
             "equipment": {
                 "ArmBand": 75,
                 "ArmorVest": 75,
-                "Backpack": 99,
+                "Backpack": 95,
                 "Earpiece": 100,
                 "Eyewear": 25,
                 "FaceCover": 80,
@@ -722,7 +722,7 @@
                 "Headwear": 100,
                 "Holster": 50,
                 "Scabbard": 100,
-                "SecondPrimaryWeapon": 15,
+                "SecondPrimaryWeapon": 25,
                 "TacticalVest": 99,
                 "SecuredContainer": 100,
                 "Pockets": 100
@@ -735,7 +735,7 @@
                 "mod_equipment_000": 75,
                 "mod_equipment_001": 45,
                 "mod_equipment_002": 45,
-                "mod_nvg": 100,
+                "mod_nvg": 95,
                 "right_side_plate": 95
             },
             "weaponMods": {
@@ -745,7 +745,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -797,7 +797,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -849,7 +849,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -901,7 +901,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -953,7 +953,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 50,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 75,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -1005,7 +1005,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 75,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -1057,7 +1057,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 75,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -1109,7 +1109,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -1161,7 +1161,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -1213,7 +1213,7 @@
                 "mod_catch": 100,
                 "mod_charge": 100,
                 "mod_charge_001": 0,
-                "mod_flashlight": 75,
+                "mod_flashlight": 25,
                 "mod_foregrip": 60,
                 "mod_hammer": 100,
                 "mod_handguard": 100,
@@ -1322,11 +1322,11 @@
                     },
                     "grenades": {
                         "weights": {
-                            "0": 30,
+                            "0": 10,
                             "1": 30,
-                            "2": 25,
-                            "3": 10,
-                            "4": 5
+                            "2": 30,
+                            "3": 20,
+                            "4": 10
                         },
                         "whitelist": {
                             "5710c24ad2720bc3458b45a3": 5,
@@ -1380,9 +1380,9 @@
                     },
                     "stims": {
                         "weights": {
-                            "0": 50,
+                            "0": 10,
                             "1": 40,
-                            "2": 10
+                            "2": 50
                         },
                         "whitelist": {
                             "66507eabf5ddb0818b085b68": 1,

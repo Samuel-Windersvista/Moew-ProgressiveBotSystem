@@ -4,7 +4,7 @@
             "equipment": {
                 "ArmBand": 15,
                 "ArmorVest": 45,
-                "Backpack": 80,
+                "Backpack": 45,
                 "Earpiece": 75,
                 "Eyewear": 15,
                 "FaceCover": 35,
@@ -12,7 +12,7 @@
                 "Headwear": 80,
                 "Holster": 15,
                 "Scabbard": 100,
-                "SecondPrimaryWeapon": 5,
+                "SecondPrimaryWeapon": 15,
                 "TacticalVest": 99,
                 "SecuredContainer": 100,
                 "Pockets": 100
@@ -25,7 +25,7 @@
                 "mod_equipment_000": 0,
                 "mod_equipment_001": 0,
                 "mod_equipment_002": 0,
-                "mod_nvg": 35,
+                "mod_nvg": 15,
                 "right_side_plate": 30
             },
             "weaponMods": {
@@ -627,8 +627,8 @@
                     },
                     "grenades": {
                         "weights": {
-                            "0": 65,
-                            "1": 35
+                            "0": 70,
+                            "1": 30
                         },
                         "whitelist": {
                             "5710c24ad2720bc3458b45a3": 5,
@@ -685,9 +685,8 @@
                     },
                     "stims": {
                         "weights": {
-                            "0": 80,
-                            "1": 20,
-                            "2": 0
+                            "0": 70,
+                            "1": 30
                         },
                         "whitelist": {
                             "5c0e530286f7747fa1419862": 10,
@@ -717,7 +716,7 @@
             "equipment": {
                 "ArmBand": 15,
                 "ArmorVest": 45,
-                "Backpack": 80,
+                "Backpack": 45,
                 "Earpiece": 75,
                 "Eyewear": 15,
                 "FaceCover": 35,
@@ -725,7 +724,7 @@
                 "Headwear": 80,
                 "Holster": 15,
                 "Scabbard": 100,
-                "SecondPrimaryWeapon": 5,
+                "SecondPrimaryWeapon": 15,
                 "TacticalVest": 99,
                 "SecuredContainer": 100,
                 "Pockets": 100
@@ -738,7 +737,7 @@
                 "mod_equipment_000": 0,
                 "mod_equipment_001": 0,
                 "mod_equipment_002": 0,
-                "mod_nvg": 35,
+                "mod_nvg": 15,
                 "right_side_plate": 30
             },
             "weaponMods": {
@@ -1340,8 +1339,8 @@
                     },
                     "grenades": {
                         "weights": {
-                            "0": 65,
-                            "1": 35
+                            "0": 70,
+                            "1": 30
                         },
                         "whitelist": {
                             "5710c24ad2720bc3458b45a3": 5,
@@ -1398,9 +1397,8 @@
                     },
                     "stims": {
                         "weights": {
-                            "0": 80,
-                            "1": 20,
-                            "2": 0
+                            "0": 70,
+                            "1": 30
                         },
                         "whitelist": {
                             "5c0e530286f7747fa1419862": 10,
